@@ -1,0 +1,11 @@
+{
+  "name": "survex.js",
+  "version": "1.0.0",
+  "description": "Survex JS compatibility layer",
+  "main": "index.js",
+  "author": "Paul Walko <paulsw.pw@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0"
+  }
+}
