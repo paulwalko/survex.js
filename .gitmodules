@@ -1,0 +1,3 @@
+[submodule "include/survex"]
+	path = include/survex
+	url = https://github.com/ojwb/survex.git

@@ -1,4 +1,10 @@
-Example
+# survex.js
+
+Dependencies
+- survex: 1.4.1
+
+
+### Example
 
 ```
 const survex = require('survex.js');

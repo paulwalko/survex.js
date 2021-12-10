@@ -1,0 +1,4 @@
+build.sh
+include/
+node_modules/
+.git/
