@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: mymindstorm/setup-emsdk@v11
-      
+
       - run: emcc -v
-    
+
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v2
@@ -18,9 +18,17 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
 
-      - run: yarn
-      
-      - run: ./build.sh package
+      - name: Install dependencies
+        run: yarn --production
+
+      - name: Build package
+        run: ./build.sh package
+
+      - name: Setup registry auth
+        run: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
 
       - run: yarn publish
         env:
