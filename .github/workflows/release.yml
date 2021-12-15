@@ -7,6 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: mindstorm/setup-emsdk@v11
+
+      - run: emcc -v
+
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v2
@@ -14,8 +18,12 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
 
-      - run: yarn
+      - name: Install dependencies
+        run: npm ci
 
-      - run: yarn publish
+      - name: Build package
+        run: ./build.sh package
+
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
