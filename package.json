@@ -1,6 +1,6 @@
 {
-  "name": "survex.js",
-  "version": "1.0.7",
+  "name": "@paulwalko/survex.js",
+  "version": "1.0.9",
   "description": "Survex JS compatibility layer",
   "main": "index.js",
   "author": "Paul Walko <paulsw.pw@gmail.com>",
