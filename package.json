@@ -1,13 +1,13 @@
 {
   "name": "survex.js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Survex JS compatibility layer",
   "main": "index.js",
   "author": "Paul Walko <paulsw.pw@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulwalko/survex.js.git"
+    "url": "git+https://github.com/paulwalko/survex.js.git"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.1.0"
