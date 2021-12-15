@@ -7,6 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: mindstorm/setup-emsdk@v11
+      
+      - run: emcc -v
+    
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v2
@@ -15,6 +19,8 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
 
       - run: yarn
+      
+      - run: ./build.sh package
 
       - run: yarn publish
         env:
