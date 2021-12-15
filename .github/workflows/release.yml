@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: mindstorm/setup-emsdk@v11
+      - uses: mymindstorm/setup-emsdk@v11
 
       - run: emcc -v
 
