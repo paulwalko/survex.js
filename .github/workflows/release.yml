@@ -25,7 +25,7 @@ jobs:
         run: ./build.sh package
 
       - name: Setup registry auth
-        run: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
