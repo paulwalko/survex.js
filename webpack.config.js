@@ -5,12 +5,12 @@ module.exports = {
   entry: './wasm/index.js',
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'survex.js',
     library: {
       name: 'survexjs',
       type: 'umd',
     },
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     fallback: {

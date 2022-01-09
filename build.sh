@@ -26,6 +26,9 @@ init-emsdk() {
 }
 
 build() {
+  echo 'Installing node libraries...'
+  rm -rf node_modules/
+  npm install --include=dev
   echo 'Building wasm libraries...'
   rm -rf wasm/
   cp -r src/ wasm/
@@ -34,6 +37,7 @@ build() {
     -O3 \
     -s EXPORTED_FUNCTIONS="['_free']" \
     -s EXPORTED_RUNTIME_METHODS="['FS', 'getValue', 'UTF8ToString']" \
+    -s SINGLE_FILE=1 \
     -o img.js
   popd &>/dev/null
 }
