@@ -1,6 +1,6 @@
 #include <emscripten.h>
 
-#include "img.h"
+#include "survex/src/img.h"
 
 void EMSCRIPTEN_KEEPALIVE jsImgOpen(img **ppStruct, char *filename) {
   img *pStruct = img_open(filename);

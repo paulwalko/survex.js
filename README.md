@@ -1,7 +1,14 @@
 # survex.js
 
 Dependencies
-- survex: 1.4.1
+- [survex: 1.4.1](https://github.com/ojwb/survex/tree/v1.4.1)
+- [emsdk: 3.1.0](https://github.com/emscripten-core/emsdk/tree/3.1.0). This defaults to node 14.15.5 and npm 6.14.11.
+
+
+## Development
+1. Run `source ./build.sh init-emsdk` to initialize the environment before doing any other dev work. `source` is required to update the `PATH` in the current shell
+1. Run `git submodule update --init` to fetch `src/survex`
+1. In `build.sh`, see `build` for building wasm files or `package` for building webpack files
 
 
 ### Example
