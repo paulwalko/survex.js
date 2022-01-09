@@ -13,6 +13,8 @@ Dependencies
 
 ### Example
 
+- Only works as a proper NPM module (no browser support, PRs accepted :))
+
 ```
 const survex = require('survex.js');
 

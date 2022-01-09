@@ -26,9 +26,16 @@ init-emsdk() {
 }
 
 build() {
+  if [[ $(echo $PATH | grep emsdk) == '' ]]; then
+    echo 'Error, emsdk not found in path! Please run `source ./build.sh init-emsdk` to setup environment'
+    return 1
+  fi
+
+  echo '####################'
   echo 'Installing node libraries...'
   rm -rf node_modules/
   npm install --include=dev
+  echo '####################'
   echo 'Building wasm libraries...'
   rm -rf wasm/
   cp -r src/ wasm/
@@ -37,14 +44,15 @@ build() {
     -O3 \
     -s EXPORTED_FUNCTIONS="['_free']" \
     -s EXPORTED_RUNTIME_METHODS="['FS', 'getValue', 'UTF8ToString']" \
-    -s SINGLE_FILE=1 \
     -o img.js
   popd &>/dev/null
 }
 
 package() {
-  echo 'Packaging with webpack...'
-  npx webpack
+  echo 'Copying necessary files to dist/'
+  rm -rf dist/
+  mkdir dist/
+  cp wasm/{index.js,img.js,img.wasm} dist/
 }
 
 
