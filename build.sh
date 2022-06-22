@@ -23,6 +23,7 @@ init-emsdk() {
 
   # Initialize the environment
   source ./emsdk/emsdk_env.sh
+  echo '(No output is expected if the environment is already setup)'
 }
 
 build() {

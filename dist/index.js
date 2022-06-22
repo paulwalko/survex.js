@@ -1,5 +1,5 @@
 const Module = require('./img.js');
-const fetch = require('isomorphic-unfetch');
+const fetch = require('node-fetch');
 
 function buildImg(pStruct, code) {
   const img = {

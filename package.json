@@ -10,7 +10,7 @@
     "url": "git+https://github.com/paulwalko/survexjs.git"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.1.0"
+    "node-fetch": "^2.6.6"
   },
   "devDependencies": {}
 }
